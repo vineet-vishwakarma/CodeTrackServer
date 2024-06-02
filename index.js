@@ -31,6 +31,10 @@ app.post("/fetchleetcode", async (req, res) => {
     res.json(response.data);
 });
 
+app.get("/", (req,res) => {
+    res.send("Server is live");
+});
+
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
