@@ -33,9 +33,10 @@ app.post("/fetchgfg", async (req, res) => {
         const response = await axios.get(
             `https://www.geeksforgeeks.org/user/${username}/`
         );
-        res.json(response.data);
+        res.json({ data: response.data, message: "user found" });
     } catch (error) {
-        res.json(error);
+        res.json({ message: "null" });
+        console.log(error);
     }
 });
 
